@@ -1,0 +1,26 @@
+<ion-view title="GBV - Cadastro de Produtos" hide-back-button="true">
+
+  <ion-content>
+
+    <label class="item item-input">
+      <i class="icon ion-search placeholder-icon"></i>
+      <input placeholder="Selecionar cód / desc" data-ng-model="stringFiltro">
+    </label>
+
+  <div class="list">
+
+    <a class="item item-avatar" ng-repeat="produto in produtos | orderBy:CodigoProduto  |filter :stringFiltro" href='#/detalhes/{{produto.CodigoProduto}}'>
+      <img ng-src="data:image/JPEG;base64,{{produto.ImagemProduto}}">
+      <h2>Desc : {{produto.DescricaoCurta}}</h2>
+      <p>{{produto.CodigoProdutoAlfa}}</p>
+    </a>
+
+
+  </div>
+
+    <div style="margin-left:50%;width:50%; position: absolute;margin-top: 10%"  >
+      <ion-spinner icon="spiral" ng-show="$parent.processando === true"></ion-spinner>
+    </div>
+
+
+</ion-view>

@@ -1,0 +1,36 @@
+<ion-view view-title=" Consulta animal ">
+
+  <ion-content>
+
+    <div class="card">
+
+      <div class="item" ng-repeat="produto in produtosDetalhe | filter: CodigoDoProdutoAlfa ">
+        <p>Código : {{produto.CodigoProdutoAlfa}}</p>
+        <h2>Produto : {{produto.DescricaoCurta}}</h2>
+
+        <br>
+
+
+        <br>
+        <a class="item item-body">
+          <img class="full-image" ng-src="data:image/JPEG;base64,{{produto.ImagemProduto}}" style="margin-left: auto; max-width: 100%; margin-right: 3%;">
+
+          <p style="font-weight: bold;word-wrap: initial";>{{produto.DescricaoLonga}}</p>
+        </a>
+
+      </div>
+
+    </div>
+
+    <div style="margin-left:50%;width:50%; position: absolute;margin-top: 10%"  >
+      <ion-spinner icon="dots" ng-show="$parent.processando === true"></ion-spinner>
+    </div>
+
+  </ion-content>
+
+</ion-view>
+
+
+
+
+
