@@ -12,7 +12,7 @@
     <a class="item item-avatar" ng-repeat="produto in produtos | orderBy:CodigoProduto  |filter :stringFiltro" href='#/detalhes/{{produto.CodigoProduto}}'>
       <img ng-src="data:image/JPEG;base64,{{produto.ImagemProduto}}">
       <h2>Desc : {{produto.DescricaoCurta}}</h2>
-      <p>{{produto.CodigoProdutoAlfa}}</p>
+      <p>{{produto.CodigoProdutoAlfa}}</p><br>
     </a>
 
 
